@@ -1,8 +1,12 @@
-# Linux Commands
-📌 Introduction
-Whether you're a developer, tester, or system administrator, knowing your way around the Linux command line can dramatically increase your efficiency. Here's a concise cheat sheet of essential Linux commands grouped by category for quick reference.
+# 🔧 Essential Linux Commands Cheat Sheet
 
-🖥️ SYSTEM
+A comprehensive list of commonly used Linux commands for Developers, Testers, and System Administrators.
+
+---
+
+## 🖥️ SYSTEM
+
+```bash
 uname -a          # Display system info
 uname -r          # Kernel release
 uptime            # System uptime and load
@@ -14,23 +18,29 @@ cal               # Current month's calendar
 w                 # Who is online
 whoami            # Logged-in user
 finger user       # Info about a user
+```
 
-🛠️ HARDWARE
+## 🛠️ HARDWARE
+
+```bash
 dmesg                     # Boot messages
 cat /proc/cpuinfo         # CPU model
 cat /proc/meminfo         # Memory info
 cat /proc/interrupts      # I/O interrupts
 lshw                      # Hardware configuration
 lsblk                     # Block devices
-free -m                  # Memory usage (MB)
+free -m                   # Memory usage (MB)
 lspci -tv                 # PCI devices
 lsusb -tv                 # USB devices
 dmidecode                # BIOS hardware info
 hdparm -i /dev/sda        # Disk info
 hdparm -tT /dev/sda       # Disk speed test
 badblocks -s /dev/sda     # Check bad blocks
+```
 
-👤 USERS
+## 👤 USERS
+
+```bash
 id                        # Current user info
 last                      # Previous logins
 who                       # Logged-in users
@@ -40,8 +50,11 @@ userdel sam               # Delete user
 adduser sam               # Add user
 usermod                   # Modify user
 chgrp                     # Change group
+```
 
-🌐 NETWORKING
+## 🌐 NETWORKING
+
+```bash
 ip addr show                     # Show interfaces
 ip address add 192.168.0.1 dev eth0  # Assign IP
 ethtool eth0                     # Ethernet status
@@ -54,8 +67,11 @@ host google.com                  # DNS IP
 hostname -i                     # Local IP
 wget file                        # Download file
 netstat -tupl                    # Active ports
+```
 
-💽 DISK USAGE
+## 💽 DISK USAGE
+
+```bash
 df -h                   # Free space
 df -i                   # Free inodes
 fdisk -l                # Partition info
@@ -63,13 +79,19 @@ du -ah                  # Disk usage
 du -sh                  # Folder size
 findmnt                 # Mount points
 mount device-path mount-point  # Mount device
+```
 
-📁 DIRECTORY TRAVERSAL
+## 📁 DIRECTORY TRAVERSAL
+
+```bash
 cd ..        # Up one level
 cd           # Home directory
 cd /test     # Go to /test
+```
 
-📄 FILE COMMANDS
+## 📄 FILE COMMANDS
+
+```bash
 ls -al                     # List all
 pwd                        # Current path
 mkdir dir-name             # Make directory
@@ -91,8 +113,11 @@ gpg -c file                # Encrypt file
 gpg file.gpg               # Decrypt file
 wc                         # Word/line count
 xargs                      # Execute from input
+```
 
-🧠 PROCESS RELATED
+## 🧠 PROCESS RELATED
+
+```bash
 ps                          # Running processes
 ps aux | grep 'telnet'      # Find telnet
 pmap                        # Memory map
@@ -102,41 +127,70 @@ killall proc                # Kill by name
 pkill process-name          # Kill by pattern
 bg                          # Resume job in bg
 fg                          # Resume job in fg
+```
 
-🔐 FILE PERMISSIONS
+## 🔐 FILE PERMISSIONS
+
+```bash
 chmod 777 file     # Full access to all
 chmod 755 file     # Owner: rwx, Others: rx
 chown user file    # Change owner
 chown user:group file # Change owner/group
+```
 
-🗜️ COMPRESSION / ARCHIVING
+## 🗜️ COMPRESSION / ARCHIVING
+
+```bash
 tar cf home.tar home       # Create tar
 tar xf file.tar            # Extract tar
 tar czf file.tar.gz files  # Tar + gzip
 gzip file                  # Gzip compression
+```
 
-📦 INSTALL PACKAGES
+## 📦 INSTALL PACKAGES
+
+```bash
 rpm -i pkg.rpm     # Install package
 rpm -e pkg         # Remove package
-🔧 INSTALL FROM SOURCE
+```
+
+## 🔧 INSTALL FROM SOURCE
+
+```bash
 ./configure
 make
 make install
+```
 
-🔍 SEARCH
+## 🔍 SEARCH
+
+```bash
 grep pattern files          # Pattern search
 grep -r pattern dir         # Recursive grep
 locate file                 # Locate file
 find /home/tom -name "index*"   # Find by name
 find /home -size +10000k    # Find by size
+```
 
-🔐 LOGIN (SSH & TELNET)
+## 🔐 LOGIN (SSH & TELNET)
+
+```bash
 ssh user@host               # SSH login
 ssh -p port user@host       # SSH with port
 telnet host                 # Telnet login
+```
 
-📤 FILE TRANSFER
+## 📤 FILE TRANSFER
+
+```bash
 sftp 192.168.75.2                   # SFTP
 scp file.txt server:/tmp            # Copy via SCP
 rsync -a /home/apps /backup/        # Rsync sync
-💡 Save & Share: Bookmark this article for a handy offline version!
+```
+
+---
+
+## 📚 License
+
+This guide is open for personal and educational use. Contributions are welcome!
+
