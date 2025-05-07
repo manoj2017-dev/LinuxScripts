@@ -1,0 +1,70 @@
+🖥️ Step-by-Step: Run Linux in a Virtual Machine on Windows
+✅ What You Need:
+VirtualBox – Free VM software
+→ Download VirtualBox
+
+Linux ISO – Choose a distro (e.g., Ubuntu, Mint)
+→ Ubuntu ISO
+→ Linux Mint ISO
+
+🔧 Step-by-Step Setup:
+1. Install VirtualBox
+---->Download and run the installer.
+---->Leave all default options unless you have a specific reason to change them.
+
+2. Download a Linux ISO
+Example: Ubuntu 22.04 .iso (~3 GB)
+
+3. Create a New Virtual Machine
+--->Open VirtualBox.
+--->Click "New".
+--->Set:
+        Name: e.g., "Ubuntu"
+        Type: Linux
+        Version: Ubuntu (64-bit)
+--->Click Next.
+
+4. Assign RAM
+--->Minimum: 2048 MB (2 GB)
+--->Recommended: 4096 MB (4 GB) if you have 8 GB or more total
+
+5. Create a Virtual Hard Disk
+--->Choose "Create a virtual hard disk now"
+--->Type: VDI
+--->Storage: Dynamically allocated
+--->Size: 20 GB or more
+
+6. Mount the ISO
+--->Go to Settings > Storage
+--->Under "Controller: IDE", click the empty CD icon
+--->On the right, click the CD icon > Choose a disk file
+--->Select your downloaded Linux ISO
+
+7. Start the VM
+--->Click Start to launch your new virtual machine.
+--->It will boot from the ISO.
+--->Choose “Try or Install Ubuntu”, and follow the on-screen steps to install.
+
+🛠 Tips After Installation
+After installing, go to Devices > Insert Guest Additions CD in VirtualBox menu. This adds:
+--->Better screen resolution
+--->Shared clipboard
+--->Drag and drop support
+
+------------------------You will get the below error----------------------------
+vmwgfx seems to be running on an unsupported hypervisor.
+[drm] vmwgfx: This configuration is likely broken.
+[drm] Please switch to a supported graphics device to avoid problems.
+🧾 What it Means:
+This error is related to Ubuntu 24.04 trying to use VMware graphics drivers (vmwgfx) inside VirtualBox, which causes conflicts because it's not the correct virtual GPU driver.
+
+✅ Fixes for This Issue
+🔹 Option 1: Change Graphics Controller in VirtualBox
+--->Shut down the VM.
+--->In VirtualBox click expert mode to see the below "VMSVGA", go to Settings > Display > Screen.
+--->Under Graphics Controller, change:
+--->From VMSVGA ➡️ To VBoxSVGA or VBoxVGA
+--->Ensure "Enable 3D Acceleration" is unchecked for now.
+--->Click OK.
+--->Start the VM again.
+--------------------------------------------------------------------------------
